@@ -81,7 +81,9 @@ console.log(sample)
                                  </div>
                  <button className='btn btn-outline-dark'>Submit</button>
             </center>
+            <div>
          {sample}
+         </div>
          </div>
     )
   }
