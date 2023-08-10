@@ -1,26 +1,21 @@
 import './App.css';
-
-import 'bootstrap/dist/css/bootstrap.min.css'
-import {Routes,Route, useNavigate} from 'react-router-dom'
-import Header from './Header'
+import {Routes,Route} from 'react-router-dom'
 import Home from './Home'
-import Data from './Body';
-import Layout from './Layout'
-import NoPage from './NoPage'
-import Contact from './Contact'
+import {Context} from './Context';
+import Blogs from './Blogs';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbarcol from './Navbar';
 let App = (props)=> {
- let navigate=useNavigate();
     return (
+      <Context>
+        <Navbarcol></Navbarcol>
       <div>
-       <Header></Header>
-       <Routes>
-        <Route path='/' element={<Home navigate={navigate}></Home>}></Route>
-        <Route path="/data" element={<Data></Data>}></Route>
-        <Route path="/layout" element={<Layout></Layout>}></Route>
-        <Route path="/Nopage" element={<NoPage></NoPage>}></Route>
-        <Route path="/contact" element={<Contact></Contact>}></Route>
-       </Routes>
+        <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+      </Routes>
       </div>
+      </Context>
     )
   
 }
